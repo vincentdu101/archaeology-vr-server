@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_26_055927) do
+ActiveRecord::Schema.define(version: 2018_09_26_153347) do
 
   create_table "actions", force: :cascade do |t|
     t.string "text"
-    t.string "choices_has_many"
+    t.string "choices"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "choices", force: :cascade do |t|
     t.string "text"
-    t.string "sequence"
+    t.string "next_action"
     t.string "choice_type"
+    t.string "action_belongs_to"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -2,10 +2,12 @@
 
 one:
   text: MyString
-  sequence: MyString
+  next_action: MyString
   choice_type: MyString
+  action_belongs_to: MyString
 
 two:
   text: MyString
-  sequence: MyString
+  next_action: MyString
   choice_type: MyString
+  action_belongs_to: MyString

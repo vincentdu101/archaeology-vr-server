@@ -6,15 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'pry'
+
+first_action = Action.create({text: "Hi greetings"})
+second_action = Action.create({text: "You are in Egypt"})
+third_action = Action.create({text: "Leave me alone"})
+
 choices = Choice.create([
     {
         text: "Where am I?",
-        sequence: "VC1S1-0",
+        next_action: second_action.id,
         choice_type: "NORMAL"
     },
     {
         text: "Nothing, thanks again.",
-        sequence: "",
+        next_action: "",
         choice_type: "CLOSE"
     }
 ])
+
+first_action.choices = choices
+first_action.save 

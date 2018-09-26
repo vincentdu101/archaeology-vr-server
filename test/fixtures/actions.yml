@@ -2,8 +2,8 @@
 
 one:
   text: MyString
-  choices_has_many: MyString
+  choices: MyString
 
 two:
   text: MyString
-  choices_has_many: MyString
+  choices: MyString

@@ -1,15 +1,19 @@
-Types::QueryType = GraphQL::ObjectType.define do 
-
-  name "Query"
-
-  field :allActions do
-    type types[Types::ActionType] 
-    description "A list of all the actions"
-
-    resolve -> (obj, args, ctx) {
-      Action.all
-    }
+class Types::QueryType < GraphQL::Schema::Object
+  
+  field :action, Types::ActionType, null: true do 
+    argument :id, ID, required: true
   end
 
-end 
+  def action(id:)
+    Action.find(id)
+  end 
 
+  field :choice, Types::ChoiceType, null: true do
+    argument :id, ID, required: true
+  end 
+
+  def choice(id:)
+    Choice.find(id)
+  end 
+
+end 

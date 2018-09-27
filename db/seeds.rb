@@ -12,18 +12,23 @@ first_action = Action.create({text: "Hi greetings"})
 second_action = Action.create({text: "You are in Egypt"})
 third_action = Action.create({text: "Leave me alone"})
 
-choices = Choice.create([
-    {
-        text: "Where am I?",
-        next_action: second_action.id,
-        choice_type: "NORMAL"
-    },
-    {
-        text: "Nothing, thanks again.",
-        next_action: "",
-        choice_type: "CLOSE"
-    }
-])
+first_choice = Choice.create({
+    text: "Where am I?",
+    next_action: second_action.id,
+    choice_type: "NORMAL"
+})
+first_choice.save
 
-first_action.choices = choices
+second_choice = Choice.create({
+    text: "Nothing, thanks again.",
+    next_action: "",
+    choice_type: "CLOSE"
+})
+second_choice.save
+
+first_action.choices = [first_choice, second_choice]
 first_action.save 
+
+all = Action.all
+
+binding.pry

@@ -1,12 +1,7 @@
-Types::ActionType = GraphQL::ObjectType.define do
-    name "Action"
+class Types::ActionType < GraphQL::Schema::Object
+    graphql_name "Action"
 
-    field :id, !types.ID
-    field :text, !types.String
-    field :choices do 
-        type types[Types::ChoiceType]
-        resolve -> (obj, args, ctx) {
-            obj.choices
-        }
-    end
+    field :id, ID, null: false
+    field :text, String, null: false
+    field :choices, [Types::ChoiceType], null: true
 end 

@@ -4,10 +4,10 @@ one:
   text: MyString
   next_action: MyString
   choice_type: MyString
-  action_belongs_to: MyString
+  action: one
 
 two:
   text: MyString
   next_action: MyString
   choice_type: MyString
-  action_belongs_to: MyString
+  action: two

@@ -3,6 +3,11 @@ class Types::ChoiceType < GraphQL::Schema::Object
 
     field :id, ID, null: false
     field :text, String, null: false
-    field :next_action, ID, null: true
     field :choice_type, String, null: false
+
+    field :contacts Types::ContactType do 
+        resolve -> (obj, args, ctx) {
+            obj.contacts
+        }
+    end
 end

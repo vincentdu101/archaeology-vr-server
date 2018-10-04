@@ -1,3 +1,4 @@
 class Choice < ApplicationRecord
-  belongs_to :action
+    has_many :outcomes
+    has_many :contacts, through: :outcomes
 end

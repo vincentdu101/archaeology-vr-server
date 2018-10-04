@@ -8,27 +8,16 @@
 
 require 'pry'
 
-first_action = Action.create({text: "Hi greetings"})
-second_action = Action.create({text: "You are in Egypt"})
-third_action = Action.create({text: "Leave me alone"})
+first_contact = Contact.create(text: "Hi greetings")
+second_contact = Contact.create(text: "You are in Egypt")
+third_contact = Contact.create(text: "Leave me alone")
 
-first_choice = Choice.create({
-    text: "Where am I?",
-    next_action: second_action.id,
-    choice_type: "NORMAL"
-})
-first_choice.save
+first_choice = Choice.create(text: "Where am I?", choice_type: "NORMAL")
+second_choice = Choice.create(text: "Nothing, thanks again.", choice_type: "CLOSE")
 
-second_choice = Choice.create({
-    text: "Nothing, thanks again.",
-    next_action: "",
-    choice_type: "CLOSE"
-})
-second_choice.save
+first_contact.outcomes.create(choice: first_choice)
+first_contact.outcomes.create(choice: second_choice)
 
-first_action.choices = [first_choice, second_choice]
-first_action.save 
-
-all = Action.all
+first_choice.outcomes.create(contact: second_contact)
 
 binding.pry

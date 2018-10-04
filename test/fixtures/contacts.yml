@@ -2,8 +2,6 @@
 
 one:
   text: MyString
-  choices: MyString
 
 two:
   text: MyString
-  choices: MyString

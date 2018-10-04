@@ -10,23 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_27_010720) do
+ActiveRecord::Schema.define(version: 2018_10_04_063645) do
 
-  create_table "actions", force: :cascade do |t|
+  create_table "choices", force: :cascade do |t|
     t.string "text"
-    t.string "choices"
+    t.string "choice_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "choices", force: :cascade do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string "text"
-    t.string "next_action"
-    t.string "choice_type"
-    t.integer "action_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["action_id"], name: "index_choices_on_action_id"
+  end
+
+  create_table "outcomes", force: :cascade do |t|
+    t.integer "contact_id"
+    t.integer "choice_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["choice_id"], name: "index_outcomes_on_choice_id"
+    t.index ["contact_id"], name: "index_outcomes_on_contact_id"
   end
 
 end

@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+References:
+
+Use the following list to develop graphql output based on the models
+http://graphql-ruby.org/getting_started
+https://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to

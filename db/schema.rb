@@ -10,6 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_10_04_063645) do
+
+  create_table "choices", force: :cascade do |t|
+    t.string "text"
+    t.string "choice_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "outcomes", force: :cascade do |t|
+    t.integer "contact_id"
+    t.integer "choice_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["choice_id"], name: "index_outcomes_on_choice_id"
+    t.index ["contact_id"], name: "index_outcomes_on_contact_id"
+  end
 
 end

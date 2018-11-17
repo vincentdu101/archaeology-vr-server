@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_04_063645) do
+ActiveRecord::Schema.define(version: 2018_11_17_024912) do
 
   create_table "choices", force: :cascade do |t|
     t.string "text"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2018_10_04_063645) do
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "character_type"
+    t.integer "hierarchy"
   end
 
   create_table "outcomes", force: :cascade do |t|

@@ -8,12 +8,14 @@
 
 require 'pry'
 
-first_contact = Contact.create(text: "Hi greetings")
-second_contact = Contact.create(text: "You are in Egypt")
-third_contact = Contact.create(text: "Leave me alone")
+game = Game.create(title: "Vikings")
 
-first_choice = Choice.create(text: "Where am I?", choice_type: "NORMAL")
-second_choice = Choice.create(text: "Nothing, thanks again.", choice_type: "CLOSE")
+first_contact = Contact.create(text: "Hi greetings", game: game)
+second_contact = Contact.create(text: "You are in Egypt", game: game)
+third_contact = Contact.create(text: "Leave me alone", game: game)
+
+first_choice = Choice.create(text: "Where am I?", choice_type: "NORMAL", game: game)
+second_choice = Choice.create(text: "Nothing, thanks again.", choice_type: "CLOSE", game: game)
 
 first_contact.outcomes.create(choice: first_choice)
 first_contact.outcomes.create(choice: second_choice)

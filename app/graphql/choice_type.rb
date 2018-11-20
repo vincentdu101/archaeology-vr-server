@@ -3,4 +3,5 @@ class ChoiceType < GraphQL::Schema::Object
   field :text, String, null: true
   field :choice_type, String, null: true
   field :contacts, [ContactType], null: true
+  field :game, [GameType], null: false
 end

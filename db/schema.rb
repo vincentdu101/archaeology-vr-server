@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_17_024912) do
+ActiveRecord::Schema.define(version: 2018_11_20_083634) do
 
   create_table "choices", force: :cascade do |t|
     t.string "text"
     t.string "choice_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "game_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -25,6 +26,14 @@ ActiveRecord::Schema.define(version: 2018_11_17_024912) do
     t.datetime "updated_at", null: false
     t.string "character_type"
     t.integer "hierarchy"
+    t.integer "game_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "outcomes", force: :cascade do |t|

@@ -11,6 +11,11 @@ class QueryType < GraphQL::Schema::Object
       description "Find a contact by ID"
       argument :id, ID, required: true
     end
+
+    field :game, GameType, null: true do 
+      description "Find a contact by ID"
+      argument :id, ID, required: true
+    end
   
     # Then provide an implementation:
     def choice(id:)

@@ -26,4 +26,8 @@ class QueryType < GraphQL::Schema::Object
       Contact.find(id)
     end 
 
+    def game(id:)
+      Game.find(id)
+    end
+
   end

@@ -14,6 +14,7 @@ end
 #     contacts {
 #       text
 #     }
+#     gameId
 #   }
 # }
 
@@ -25,10 +26,31 @@ end
 #       id
 #       text
 #       choiceType
+#     }
+#     characterType
+#     hierarchy
+#     gameId
+#   }
+# }
+
+# {
+#   game(id: 1) {
+#     id
+#     title
+#     choices {
+#       id
+#       text
+#       choiceType
 #       contacts {
 #         id
 #       }
-#     } 
+#     }
+#     contacts {
+#       id
+#       text
+#       choices {
+#         id
+#       }
+#     }
 #   }
-  
 # }

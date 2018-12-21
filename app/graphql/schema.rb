@@ -54,3 +54,20 @@ end
 #     }
 #   }
 # }
+
+# {
+#   game(id: 1) {
+#     contacts {
+#       id
+#       text
+#       choices {
+#         id
+#         text
+#         choiceType
+#         contacts {
+#           id
+#         }
+#       }
+#     }
+#   }
+# }

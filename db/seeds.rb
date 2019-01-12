@@ -22,6 +22,13 @@ game = Game.create(title: "Vikings")
 
 # first_choice.outcomes.create(contact: second_contact)
 
+VC1S00 = Contact.create(
+    text: "Hi, how can I help you?", 
+    character_type: "SOLDIER",
+    hierarchy: 1,
+    game: game
+)
+
 VC1S01C = Choice.create(
     text: "How do I find someone who can help me?", 
     choice_type: "NORMAL",
@@ -40,33 +47,14 @@ nothing_thanks = Choice.create(
     game: game    
 )
 
-VC1S00 = Contact.create(
-    text: "Hi, how can I help you?", 
-    character_type: "SOLDIER",
-    hierarchy: 1,
-    game: game
-)
 VC1S00.outcomes.create([{choice: VC1S01C}, {choice: VC1S02C}, {choice: nothing_thanks}])
 
-VC1S02C1 = Choice.create(
-    text: "I see. Where am I?", 
-    choice_type: "NORMAL",
-    game: game    
-)
-
-ok_thanks = Choice.create(
-    text: "OK, thanks.", 
-    choice_type: "CLOSE",
-    game: game    
-)
-
 VC1S01 = Contact.create(
     text: "You can talk to our lord Earl Erik the Red he is in the town square.", 
     character_type: "SOLDIER",
     hierarchy: 1,
     game: game
 )
-VC1S01.outcomes.create([{choice: VC1S02C1}, {choice: ok_thanks}])
 
 VC1S02C1 = Choice.create(
     text: "I see. Where am I?", 
@@ -80,13 +68,198 @@ ok_thanks = Choice.create(
     game: game    
 )
 
-VC1S01 = Contact.create(
-    text: "You can talk to our lord Earl Erik the Red he is in the town square.", 
+VC1S01.outcomes.create([{choice: VC1S02C1}, {choice: ok_thanks}])
+
+VC1S02 = Contact.create(
+    text: "You are in Grœnland. We are establishing our first fort here under our lord Earl Erik the Red.",
     character_type: "SOLDIER",
     hierarchy: 1,
     game: game
 )
-VC1S01.outcomes.create([{choice: VC1S02C1}, {choice: ok_thanks}])
+
+VC1S02C2 = Choice.create(
+    text: "How do I find someone who can help me?", 
+    choice_type: "NORMAL",
+    game: game    
+)
+
+VC1S02.outcomes.create([{choice: VC1S02C2}, {choice: ok_thanks}])
+
+VC1S03 = Contact.create(
+    text: "Stop bothering me I need to get going.",
+    character_type: "SOLDIER",
+    hierarchy: 1,
+    game: game
+)
+
+VC1S03.outcomes.create([{choice: ok_thanks}])
+
+VC1S04 = Contact.create(
+    text: "Sorry I need to get going.",
+    character_type: "SOLDIER",
+    hierarchy: 1,
+    game: game
+)
+
+VC1S04.outcomes.create([{choice: ok_thanks}])
+
+VC1S05 = Contact.create(
+    text: "Greetings Warrior, I am Earl Erik the Red.",
+    character_type: "EricTheRed",
+    hierarchy: 1,
+    game: game
+)
+
+VC1S00A = Choice.create(
+    text: "Greetings your lordship, can you tell me if you've seen any glowing stones?", 
+    choice_type: "NORMAL",
+    game: game    
+)
+
+VC1S01A = Choice.create(
+    text: "Greetings your lordship, can I help you with anything?", 
+    choice_type: "NORMAL",
+    game: game    
+)
+
+honor = Choice.create(
+    text: "It is an honor to meet you sir, good day.", 
+    choice_type: "CLOSE",
+    game: game    
+)
+
+VC1S05.outcomes.create([{choice: VC1S00A}, {choice: VC1S01A}, {choice: honor}])
+
+VC1S06 = Contact.create(
+    text: "Yes I have heard of a report of this from our workers to the east of the village. 
+            You can talk to the lead worker there Illugi about it more if you like.",
+    character_type: "EricTheRed",
+    hierarchy: 1,
+    game: game
+)
+
+VC1S02A = Choice.create(
+    text: "I see, I was wondering if I can help you with anything?", 
+    choice_type: "NORMAL",
+    game: game    
+)
+
+thank_lord = Choice.create(
+    text: "Thank your your lordship for the news. Good day.", 
+    choice_type: "CLOSE",
+    game: game    
+)
+
+VC1S06.outcomes.create([{choice: VC1S02A}, {choice: thank_lord}])
+
+VC1S07 = Contact.create(
+    text: "Yes actually, I need someone to deliver this message to our ship captain near the river to the west of the village. 
+            Once you deliver it, come back and I will reward you with an ax.",
+    character_type: "EricTheRed",
+    hierarchy: 2,
+    game: game
+)
+
+yes_lord = Choice.create(
+    text: "Yes sire your wish is my command.", 
+    choice_type: "CLOSE",
+    game: game    
+)
+
+VC1S07.outcomes.create([{choice: yes_lord}])
+
+VC1S08 = Contact.create(
+    text: "Greetings again Warrior.",
+    character_type: "EricTheRed",
+    hierarchy: 1,
+    game: game
+)
+
+VC1S08.outcomes.create([{choice: VC1S00A}, {choice: VC1S01A}, {choice: honor}])
+
+VC1S09 = Contact.create(
+    text: "Greetings again Warrior, have you done the task I asked?",
+    character_type: "EricTheRed",
+    hierarchy: 2,
+    game: game
+)
+
+VC1S03A = Choice.create(
+    text: "Yes sire I have delivered it as promised", 
+    choice_type: "NORMAL",
+    game: game    
+)
+
+VC1S04A = Choice.create(
+    text: "Not yet sire, I wanted to ask again where your ship captain was?", 
+    choice_type: "NORMAL",
+    game: game    
+)
+
+not_yet_sire = Choice.create(
+    text: "It is an honor to meet you sir, good day.", 
+    choice_type: "CLOSE",
+    game: game    
+)
+
+VC1S09.outcomes.create([{choice: VC1S03A}, {choice: VC1S04A}, {choice: not_yet_sire}])
+
+VC1S010 = Contact.create(
+    text: "Good job warrior, here is your gift as promised.",
+    character_type: "EricTheRed",
+    hierarchy: 2,
+    game: game
+)
+
+VC1S05A = Choice.create(
+    text: "Not yet sire, I wanted to ask again where your ship captain was?", 
+    choice_type: "NORMAL",
+    game: game    
+)
+
+thank_sire = Choice.create(
+    text: "Thank you sire.", 
+    choice_type: "CLOSE",
+    game: game    
+)
+
+VC1S010.outcomes.create([{choice: VC1S05A}, {choice: thank_sire}])
+
+VC1S011 = Contact.create(
+    text: "He is located to the west of the village near the river.",
+    character_type: "EricTheRed",
+    hierarchy: 2,
+    game: game
+)
+
+with_haste = Choice.create(
+    text: "Thank you sire, I will get to the task at haste.", 
+    choice_type: "CLOSE",
+    game: game    
+)
+
+VC1S011.outcomes.create([{choice: with_haste}])
+
+VC1S012 = Contact.create(
+    text: "Greetings again warrior.",
+    character_type: "EricTheRed",
+    hierarchy: 2,
+    game: game
+)
+
+VC1S06A = Choice.create(
+    text: "Greetings your lordship, can you tell me again where you saw the glowing stones?", 
+    choice_type: "NORMAL",
+    game: game    
+)
+
+greet_again = Choice.create(
+    text: "Thank you sire.", 
+    choice_type: "CLOSE",
+    game: game    
+)
+
+VC1S012.outcomes.create([{choice: VC1S06A}, {choice: greet_again}])
 
 binding.pry
 

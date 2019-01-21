@@ -165,6 +165,7 @@ VC1S07 = Contact.create(
             Once you deliver it, come back and I will reward you with an ax.",
     character_type: "EricTheRed",
     hierarchy: 2,
+    item_granted: "message",
     game: game
 )
 
@@ -221,6 +222,8 @@ VC1S010 = Contact.create(
     text: "Good job warrior, here is your gift as promised.",
     character_type: "EricTheRed",
     hierarchy: 2,
+    item_granted: "axe",
+    finish_task: "message",
     game: game
 )
 
@@ -407,7 +410,6 @@ VC1S017.outcomes.create([{choice: VC1S012A}, {choice: VC1S013A}, {choice: nice_t
 VC1S018 = Contact.create(
     text: "Thank you warrior, please report back to the Earl that I have received it. How else can I be of assistance?",
     character_type: "ShipCaptain",
-    requirement: "message",
     hierarchy: 2,
     game: game
 )
@@ -431,7 +433,6 @@ VC1S018.outcomes.create([{choice: VC1S014A}, {choice: good_day}])
 VC1S019 = Contact.create(
     text: "Yes I saw one near the edge of the river South of here. However, you probably need a net to pick it up from the water. You can grab one from Glaumur. He is in charge of supplies near the village center.",
     character_type: "ShipCaptain",
-    requirement: "message",
     hierarchy: 2,
     game: game
 )
@@ -499,6 +500,7 @@ VC1S023= Contact.create(
     text: "Certainly, here you go warrior.",
     character_type: "Glaumur",
     hierarchy: 2,
+    item_granted: "net",
     game: game
 )
 

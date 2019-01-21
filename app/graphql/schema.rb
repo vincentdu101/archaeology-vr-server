@@ -71,3 +71,28 @@ end
 #     }
 #   }
 # }
+
+# {
+#   game(id: 1) {
+#     id
+#     title
+#     contacts {
+#       id
+#       text
+#       hierarchy
+#       characterType
+#       choices {
+#         id
+#         text
+#         itemGranted 
+# 				itemGone
+#         finishTask
+#         requirement
+#         choiceType
+#         contacts {
+#           id
+#         }
+#       }
+#     }
+#   }
+# }

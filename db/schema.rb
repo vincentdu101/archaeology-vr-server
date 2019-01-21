@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_21_080922) do
+ActiveRecord::Schema.define(version: 2019_01_21_193705) do
 
   create_table "choices", force: :cascade do |t|
     t.string "text"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_01_21_080922) do
     t.string "item_granted"
     t.string "item_gone"
     t.string "finish_task"
+    t.string "requirement"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -30,6 +31,10 @@ ActiveRecord::Schema.define(version: 2019_01_21_080922) do
     t.string "character_type"
     t.integer "hierarchy"
     t.integer "game_id"
+    t.string "item_granted"
+    t.string "item_gone"
+    t.string "finish_task"
+    t.string "requirement"
   end
 
   create_table "games", force: :cascade do |t|

@@ -46,3 +46,6 @@ rails db:migrate
 
 * Reset Database and rerun seed.rb 
 rails db:reset
+
+* Delete migration
+rails d migration MigrationName

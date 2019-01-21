@@ -174,6 +174,7 @@ VC1S02A.outcomes.create(contact: VC1S07)
 yes_lord = Choice.create(
     text: "Yes sire your wish is my command.", 
     choice_type: "CLOSE",
+    item_granted: "message",
     game: game    
 )
 
@@ -198,6 +199,7 @@ VC1S09 = Contact.create(
 VC1S03A = Choice.create(
     text: "Yes sire I have delivered it as promised", 
     choice_type: "NORMAL",
+    item_gone: "message",
     game: game    
 )
 
@@ -233,6 +235,8 @@ VC1S05A = Choice.create(
 thank_sire = Choice.create(
     text: "Thank you sire.", 
     choice_type: "CLOSE",
+    item_granted: "axe",
+    finish_task: "message",
     game: game    
 )
 
@@ -382,6 +386,7 @@ VC1S017 = Contact.create(
 VC1S012A = Choice.create(
     text: "Greetings sir, I have a message for you from our Earl Erik the Red.",
     choice_type: "NORMAL",
+    requirement: "message",
     game: game    
 )
 
@@ -402,6 +407,7 @@ VC1S017.outcomes.create([{choice: VC1S012A}, {choice: VC1S013A}, {choice: nice_t
 VC1S018 = Contact.create(
     text: "Thank you warrior, please report back to the Earl that I have received it. How else can I be of assistance?",
     character_type: "ShipCaptain",
+    requirement: "message",
     hierarchy: 2,
     game: game
 )
@@ -425,6 +431,7 @@ VC1S018.outcomes.create([{choice: VC1S014A}, {choice: good_day}])
 VC1S019 = Contact.create(
     text: "Yes I saw one near the edge of the river South of here. However, you probably need a net to pick it up from the water. You can grab one from Glaumur. He is in charge of supplies near the village center.",
     character_type: "ShipCaptain",
+    requirement: "message",
     hierarchy: 2,
     game: game
 )
@@ -453,6 +460,7 @@ VC1S021 = Contact.create(
 VC1S016A = Choice.create(
     text: "Greetings again sir, I have a message for you from our Earl Erik the Red.",
     choice_type: "NORMAL",
+    requirement: "message",
     game: game    
 )
 
@@ -499,6 +507,7 @@ VC1S017A.outcomes.create(contact: VC1S023)
 VC1S019A = Choice.create(
     text: "Thank you sir, have you seen any glowing orbs today?",
     choice_type: "NORMAL",
+    item_granted: "net",
     game: game    
 )
 

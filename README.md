@@ -28,5 +28,21 @@ References:
 Use the following list to develop graphql output based on the models
 http://graphql-ruby.org/getting_started
 https://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to
-
 https://github.com/rmosolgo/graphql-ruby/issues/1881 
+
+Migrations: 
+
+To create/update sql table and columns with changes, you do migrations: 
+https://edgeguides.rubyonrails.org/active_record_migrations.html
+
+* Modify existing table with adding column
+rails generate migration AddItemGrantedToContacts item_granted:string
+
+* Modify existing table with removing column
+rails generate migration RemoveItemGrantedFromContacts item_granted:string
+
+* Run pending migrations
+rails db:migrate
+
+* Reset Database and rerun seed.rb 
+rails db:reset

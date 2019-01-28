@@ -282,7 +282,15 @@ greetings_again = Choice.create(
     game: game    
 )
 
-VC1S06A.outcomes.create(contact: VC1S06)
+VC1S06B = Contact.create(
+    text: "Yes I have heard of a report of this from our workers to the east of the village. 
+            You can talk to the lead worker there Illugi about it more if you like.",
+    character_type: "EricTheRed",
+    hierarchy: 2,
+    game: game
+)
+
+VC1S06A.outcomes.create(contact: VC1S06B)
 
 VC1S012.outcomes.create([{choice: VC1S06A}, {choice: greetings_again}])
 

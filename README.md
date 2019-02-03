@@ -30,6 +30,14 @@ http://graphql-ruby.org/getting_started
 https://apidock.com/rails/ActiveRecord/Associations/ClassMethods/belongs_to
 https://github.com/rmosolgo/graphql-ruby/issues/1881 
 
+
+Ruby Environment Setup:
+
+Install ruby 2.5.1:
+rvm install ruby-2.5.1
+gem install bundler
+gem update --system
+
 Migrations: 
 
 To create/update sql table and columns with changes, you do migrations: 
